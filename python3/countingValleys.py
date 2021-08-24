@@ -71,7 +71,19 @@ import sys
 
 def countingValleys(steps, path):
     # Write your code here
-
+    e = 0
+    num_val = 0
+    for p in path:
+        if p == 'U':
+            # elevation plus 1
+            e += 1
+        else:
+            # elevation minus 1
+            e -= 1
+            if e == -1:
+                num_val += 1
+    return num_val
+            
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
